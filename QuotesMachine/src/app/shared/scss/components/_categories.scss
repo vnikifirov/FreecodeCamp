@@ -1,0 +1,76 @@
+// Code-------------------------------
+body {
+  background: rgb(255,255,255);
+  font: {
+    size: 12px;
+    family: 'Roboto', Arial, sans-serif;
+  }
+}
+
+#grid {
+  position: relative;
+  width: 30%;
+  margin: 0 auto;
+  padding: 0; /* Clears unordered list default of 40px */
+
+  li {
+    transform: rotate(-60deg) skewY(30deg);
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 27.86%;
+    padding: 0 0 32.17% 0;
+    overflow: hidden;
+    visibility: hidden;
+
+    .hexagon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #D2D0DD;
+      transform: skewY(-30deg) rotate(60deg);
+      overflow: hidden;
+
+      p {
+        margin: 0;
+        color: #0A2454;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover {
+        background: #0A2454;
+        p { color: #FFFFFF; }
+      }
+    }
+
+    & * { visibility: visible; }
+    &:nth-child(3n+2) { margin: 0 1%; }
+
+    // (3 x n) + k = e = Nrd Element
+    // https://css-tricks.com/how-nth-child-works/
+    &:nth-child(6n+4),
+    &:nth-child(6n+5),
+    &:nth-child(6n+6) {
+      margin-top: -6.93%;
+      margin-bottom: -6.93%;
+      transform:
+        translateX(50%)
+        rotate(-60deg)
+        skewY(30deg);
+    }
+
+    &:nth-child(6n+4) {
+      margin-left: 0.5%;
+    }
+  }
+
+  &:after { @include clearfix; }
+}

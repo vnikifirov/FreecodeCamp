@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body">      
+    
+    <blockquote class="blockquote">
+
+      <h5 class="text-center"> 
+        {{quote.title}}
+      </h5>
+
+      <p class="mb-0">
+        {{quote.content}}
+      </p>
+
+      <!--
+      <footer class="blockquote-footer">
+        Someone famous in 
+        <cite title="Source Title">
+          Source Title
+        </cite>
+      </footer>
+      -->
+    </blockquote>
+
+    <div class="float-right">
+      <a 
+        id="share-twitter"
+        class="btn btn-primary"
+        href="https://twitter.com/home?status={{ status }}"
+        target="_blank"
+        role="button"
+        (click)="onClickShare()">
+
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+        
+        <span>Share</span>
+      </a>
+
+      <button
+        class="btn btn-large btn-outline-primary"
+        type="button"        
+        (click)="onClickNext()">
+        Next >
+      </button>     
+
+    </div>
+
+  </div>
+</div>
